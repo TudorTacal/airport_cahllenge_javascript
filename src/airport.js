@@ -1,9 +1,11 @@
-var Airport = function () {
+var Airport = function (weather = new Weather()) {
   this.planes = [];
+  this.weather = weather;
 };
 
+
 Airport.prototype.land = function(plane){
-  if (weather.isStormy() === true) throw "Cannot land plane: weather is stormy.";
+  if (this.weather.isStormy() === true) throw "Cannot land plane: weather is stormy.";
   this.planes.push(plane);
 
 };

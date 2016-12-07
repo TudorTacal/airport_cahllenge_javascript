@@ -13,7 +13,7 @@ describe('Airport', function(){
   describe('#land', function(){
     it('should land a plane', function(){
       airport.land(plane);
-      expect(airport.planes.length).toEqual(1);
+      expect(airport.planes).toEqual([plane]);
     });
     it('should not land a plane when the weather is stormy',function () {
       spyOn(weather, 'isStormy').and.returnValue(true);
