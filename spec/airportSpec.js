@@ -50,5 +50,9 @@ describe('Airport', function(){
       expect(airport.capacity).toEqual(20);
     });
 
+    it('that can be overridden as appropriate, i.e 25', function(){
+      var airport_2 = new Airport(25);
+      expect(airport_2.capacity).toEqual(25);
+    });
   });
 });

@@ -1,5 +1,5 @@
 /*jshint esversion: 6 */
-var Airport = function (weather = new Weather(), defaultCapacity=20) {
+var Airport = function (defaultCapacity=20, weather = new Weather()) {
   this.planes = [];
   this.weather = weather;
   this.MAXIMUM_CAPACITY = 20;
