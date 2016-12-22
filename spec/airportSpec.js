@@ -44,4 +44,11 @@ describe('Airport', function(){
         airport.land(plane);}).toThrow("Cannot land plane: airport at full capacity.");
     });
   });
+
+  describe('it has a default capacity', function () {
+    it('default capacity is 20', function(){
+      expect(airport.capacity).toEqual(20);
+    });
+
+  });
 });
