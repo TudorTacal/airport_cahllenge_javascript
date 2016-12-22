@@ -28,15 +28,7 @@ I want to prevent landing when weather is stormy
 
 ## To implement
 
-```
-As an air traffic controller
-To ensure safety
-I want to prevent landing when the airport is full
-
-As the system designer
-So that the software can be used for many different airports
-I would like a default airport capacity that can be overridden as appropriate
-```
+Edge cases.
 
 # Contacts
 --------
