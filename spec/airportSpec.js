@@ -34,16 +34,6 @@ describe('Airport', function(){
       });
   });
 
-  describe('at full capacity', function () {
-    it('prevents plane from landing',function (){
-      spyOn(airport.weather, "isStormy").and.returnValue(false);
-      for(var i=0;i<20;i++) {
-        airport.land(plane);
-      }
-      expect(function() {
-        airport.land(plane);}).toThrow("Cannot land plane: airport at full capacity.");
-    });
-  });
 
   describe('it has a default capacity', function () {
     it('default capacity is 20', function(){
@@ -51,7 +41,8 @@ describe('Airport', function(){
     });
 
     it('that can be overridden as appropriate, i.e 25', function(){
-      var airport_2 = new Airport(25);
+      var airport_2 = new Airport();
+      airport_2.capacity = 25;
       expect(airport_2.capacity).toEqual(25);
     });
   });

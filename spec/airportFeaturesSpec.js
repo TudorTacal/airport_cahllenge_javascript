@@ -35,4 +35,26 @@ describe('Features Tests', function () {
         airport.takeOff(plane);}).toThrow("Cannot take off plane: weather is stormy.");
       });
     });
+
+    describe('User story 4', function () {
+      it('plane cannot land if aiport capacity is full',function (){
+        spyOn(airport.weather, "isStormy").and.returnValue(false);
+        for(var i=0;i<20;i++) {
+          airport.land(plane);
+        }
+        expect(function() {
+          airport.land(plane);}).toThrow("Cannot land plane: airport at full capacity.");
+      });
+    });
+
+    describe('User story 5', function() {
+      it('airport capacity can be overridden as appropriate', function(){
+        var airport_2 = new Airport(25);
+        spyOn(airport_2.weather, "isStormy").and.returnValue(false);
+        for(var i=0;i<25;i++) {
+          airport_2.land(plane);
+        }
+        expect(airport_2.planes.length).toEqual(25);
+      });
+    });
   });
